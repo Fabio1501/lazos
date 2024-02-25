@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-image': "url('https://i.postimg.cc/6qC79CC1/home-lazos.jpg')",
+      }
+    },
   },
   plugins: [],
 }
