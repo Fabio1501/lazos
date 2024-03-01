@@ -7,7 +7,7 @@ import NavBar from './components/NavBar'
 function App() {
 
   return (
-    <div className="bg-[#fffbeb]">
+    <div className="">
       <NavBar></NavBar>
       <Routes>
         <Route
