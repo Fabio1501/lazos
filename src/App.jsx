@@ -3,12 +3,13 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Landing from './pages/Landing'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <div className="">
-      <NavBar></NavBar>
+      <NavBar/>
       <Routes>
         <Route
           exact
@@ -16,6 +17,7 @@ function App() {
           element={<Landing />}
         />
       </Routes>
+      <Footer/>
     </div>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { GoArrowRight } from "react-icons/go";
 import masaje from '../assets/masaje.png'
 import psicologia from '../assets/autismo.png'
 import fonoaudilogia from '../assets/terapia-musical.png'
 import kinesiologia from '../assets/kinesiologia.png'
+import Review from './Review';
 
 function Home() {
   return (
@@ -24,8 +24,18 @@ function Home() {
         </div>
         <img src="https://i.postimg.cc/TPdwdvzL/hero-image-lazos.png" className={` rounded-3xl w-full`} alt="" />
       </div>
-      <div className='absolute -bottom-12 bg-white rounded-3xl w-3/4 h-64 shadow-xl flex items-center py-10'>
+      <div className='absolute -bottom-12 bg-white w-3/4 h-64 shadow-xl rounded-3xl flex justify-between items-start py-10'>
         <div className='h-full pl-16 pr-8 w-1/2 flex flex-col justify-between items-start'>
+          <Review></Review>
+          
+          {/* <div className="flex -space-x-4 rtl:space-x-reverse">
+              <img className="w-10 h-10 border-2 border-white rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="" />
+              <img className="w-10 h-10 border-2 border-white rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
+              <img className="w-10 h-10 border-2 border-white rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-4.jpg" alt="" />
+              <Link className="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600" to="/">+9</Link>
+            </div> */}
+        </div>
+        <div className='h-full pr-16 pl-8 w-1/2 flex flex-col justify-between items-start'>
           <div className='w-full flex items-end justify-between'>
             <h3 className='text-4xl font-black'>Servicios</h3>
             <Link to={'/'} className='text-naranja font-bold hover:underline'>Ver más...</Link>
@@ -57,24 +67,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className='h-full pr-16 pl-8 w-1/2 flex flex-col justify-between items-start gap-y-8'>
-          <h3 className='text-4xl font-black'>Reseñas</h3>
-          <div className='w-full flex items-center justify-between gap-x-8'>
-           
-            <button className='flex items-center gap-x-2 border rounded-full px-2 py-2 bg-naranja'>
-              <span className='font-bold uppercase text-white'>Contactanos</span>
-              <div className='rounded-full w-10 h-10 bg-white text-naranja flex items-center justify-center text-4xl font-bold'>
-                <GoArrowRight />
-              </div>
-            </button>
-            <div class="flex -space-x-4 rtl:space-x-reverse">
-              <img className="w-10 h-10 border-2 border-white rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="" />
-              <img className="w-10 h-10 border-2 border-white rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
-              <img className="w-10 h-10 border-2 border-white rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-4.jpg" alt="" />
-              <Link className="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600" to="/">+9</Link>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   )

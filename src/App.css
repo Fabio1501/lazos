@@ -9,7 +9,7 @@
   height: 0;
   border-style: solid;
   border-width: 0px 16px 16px 16px; /* Tamaño y forma del triángulo */
-  border-color: transparent transparent #Fc6b23 transparent; /* Colores de los bordes */
+  border-color: transparent transparent #02AEF6 transparent; /* Colores de los bordes */
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);

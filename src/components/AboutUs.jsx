@@ -31,7 +31,7 @@ const aboutUs = [
     id: 2,
     title: "NUESTRA VISION",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore iste cupiditate vitae hic, ad voluptatibus eveniet voluptas dignissimos magni blanditiis quis laborum, itaque ducimus nulla quisquam tenetur minus minima.",
-    img: "https://i.postimg.cc/Fz1H5ygH/110-Definir-la-mision-y-vision-de-una-empresa.jpg",
+    img: "https://blog.grupo-pya.com/wp-content/uploads/2017/05/imagen1.jpg",
     itemsList: [
       {
         text: "lorem ipsum vision",
@@ -56,7 +56,7 @@ const aboutUs = [
     id: 3,
     title: "NUESTROS VALORES",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore iste cupiditate vitae hic, ad voluptatibus eveniet voluptas dignissimos magni blanditiis quis laborum, itaque ducimus nulla quisquam tenetur minus minima.",
-    img: "https://i.postimg.cc/Fz1H5ygH/110-Definir-la-mision-y-vision-de-una-empresa.jpg",
+    img: "https://fx-wolf.com/wp-content/uploads/2020/11/what-is-forex.jpg",
     itemsList: [
       {
         text: "lorem ipsum valores",
@@ -92,16 +92,21 @@ const AboutUs = () => {
   }
 
   return (
-    <section className='w-full h-full py-12 max-w-7xl mx-auto flex flex-col items-center'>
+    <section className='w-full h-full max-w-7xl mx-auto flex flex-col items-center'>
       <div className='w-full flex justify-between items-center'>
         <div className='w-1/2 flex flex-col items-start gap-y-6 text-start'>
-          <h2 className='font-black text-3xl'>{itemSelected?.title}</h2>
+          <div className='relative flex flex-col items-start'>
+            <h2 className='font-black text-3xl'>{itemSelected?.title}</h2>
+            <div class="text-center mb-10">
+              <span class="inline-block w-40 h-1.5 rounded-full bg-naranja"></span>
+            </div>
+          </div>
           <p>{itemSelected.text}</p>
           <div className='flex flex-wrap gap-8'>
             {
-              itemSelected?.itemsList?.map(item => {
+              itemSelected?.itemsList?.map((item, index) => {
                 return (
-                  <div className='flex items-center gap-x-4'>
+                  <div key={`${item.text} ${index}`} className='flex items-center gap-x-4'>
                     <div className='bg-celeste/20 text-celeste rounded-full p-3 text-3xl'>
                       {item.icon}
                     </div>
@@ -123,7 +128,7 @@ const AboutUs = () => {
                   aboutUs.map(item => {
                     return (
                       <button key={item.id} onClick={() => selectItem(item)} className={`flex flex-col items-center gap-y-1.5`}>
-                        <img className={`rounded-full w-12 h-12 ${itemSelected.id == item.id ? 'inline' : 'opacity-50'}`} src={item.img} alt="" />
+                        <img className={`rounded-full ${itemSelected.id == item.id ? 'inline w-12 h-12' : 'opacity-50 w-10 h-10'}`} src={item.img} alt="" />
                         <span className={`font-bold ${itemSelected.id == item.id ? 'inline' : 'opacity-0'}`}>{item.title}</span>
                       </button>
                     )
