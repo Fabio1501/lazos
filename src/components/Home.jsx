@@ -41,29 +41,29 @@ function Home() {
             <Link to={'/'} className='text-naranja font-bold hover:underline'>Ver más...</Link>
           </div>
           <div className='w-full flex items-center justify-between gap-x-8'>
-            <div className='flex flex-col items-center gap-y-4 text-[#FC5f23]'>
+            <div className='flex flex-col items-center gap-y-4'>
               <div className='text-4xl border rounded-lg p-4'>
                 <img src={psicologia} alt="" />
               </div>
               <p className='font-bold uppercase text-black text-sm'>Psicología</p>
             </div>
-            <div className='flex flex-col items-center gap-y-4 text-[#FFDA08]'>
+            <div className='flex flex-col items-center gap-y-4'>
               <div className='text-4xl border rounded-lg p-4'>
                 <img src={masaje} alt="" />
               </div>
               <p className='font-bold uppercase text-black text-sm'>Fisioterapia</p>
             </div>
-            <div className='flex flex-col items-center gap-y-4 text-[#02AEF6]'>
-              <div className='text-4xl border rounded-lg p-4'>
-                <img src={kinesiologia} alt="" />
-              </div>
-              <p className='font-bold uppercase text-black text-sm'>Kinesiologia</p>
-            </div>
-            <div className='flex flex-col items-center gap-y-4 text-[#FC5f23]'>
+            <div className='flex flex-col items-center gap-y-4'>
               <div className='text-4xl border rounded-lg p-4'>
                 <img src={fonoaudilogia} alt="" />
               </div>
               <p className='font-bold uppercase text-black text-sm'>Fonoaudiologia</p>
+            </div>
+            <div className='flex flex-col items-center gap-y-4'>
+              <div className='text-4xl border rounded-lg p-4'>
+                <img src={kinesiologia} alt="" />
+              </div>
+              <p className='font-bold uppercase text-black text-sm'>Kinesiologia</p>
             </div>
           </div>
         </div>
