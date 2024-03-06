@@ -97,8 +97,8 @@ const AboutUs = () => {
         <div className='w-1/2 flex flex-col items-start gap-y-6 text-start'>
           <div className='relative flex flex-col items-start'>
             <h2 className='font-black text-3xl'>{itemSelected?.title}</h2>
-            <div class="text-center mb-10">
-              <span class="inline-block w-40 h-1.5 rounded-full bg-naranja"></span>
+            <div className="text-center mb-10">
+              <span className="inline-block w-40 h-1.5 rounded-full bg-naranja"></span>
             </div>
           </div>
           <p>{itemSelected.text}</p>
