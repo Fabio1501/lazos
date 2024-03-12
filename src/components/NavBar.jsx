@@ -31,10 +31,10 @@ function NavBar() {
         <Link to='/members' className='flex gap-x-1 items-center text-xl uppercase font-bold'>
           <span>nosotros</span>
         </Link>
-        <Link to='/' className='flex gap-x-1 items-center text-xl uppercase font-bold'>
+        <Link to='/contact' className='flex gap-x-1 items-center text-xl uppercase font-bold'>
           <span>Contacto</span>
         </Link>
-        <Link to='/' onMouseEnter={hover} onMouseLeave={hover2} className='relative flex flex-col gap-x-1 items-center'>
+        <Link to='/services' onMouseEnter={hover} onMouseLeave={hover2} className='relative flex flex-col gap-x-1 items-center'>
           <span className='text-xl uppercase font-bold'>Servicios</span>
           <div className={`${!hoverSize ? '' : 'arrow z-[100]'}`}></div>
           <div className={`absolute top-10 z-10 bg-white divide-gray-100 rounded-2xl w-44 ${!hoverSize ? 'hidden' : ''}`}>

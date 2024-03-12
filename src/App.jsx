@@ -4,12 +4,14 @@ import Landing from './pages/Landing'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Members from './pages/Members'
+import Services from './pages/Services'
+import Contact from './pages/Contact'
 
 function App() {
 
   return (
     <div className="">
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route
           exact
@@ -21,8 +23,18 @@ function App() {
           path='/members'
           element={<Members />}
         />
+        <Route
+          exact
+          path='/services'
+          element={<Services />}
+        />
+        <Route
+          exact
+          path='/contact'
+          element={<Contact />}
+        />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

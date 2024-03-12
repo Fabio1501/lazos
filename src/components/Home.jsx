@@ -1,38 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import masaje from '../assets/masaje.png'
-import psicologia from '../assets/autismo.png'
-import fonoaudilogia from '../assets/terapia-musical.png'
-import kinesiologia from '../assets/kinesiologia.png'
 import Review from './Review';
-import isabelOvejero from '../assets/isabel-ovejero.jpg'
+
+import { services } from '../constantes/services';
+import { reviewsData } from '../constantes/reviews';
+
+import { GoArrowRight } from "react-icons/go";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-const reviewsData = [
-  {
-    id: 1,
-    name: "Isabel",
-    lastName: "Ovejero",
-    profession: "Psicóloga",
-    image: isabelOvejero,
-    text: "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
-  },
-  {
-    id: 2,
-    name: "Hernán",
-    lastName: "Galván",
-    profession: "Fisioterapeuta",
-    image: isabelOvejero,
-    text: "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
-  },
-  {
-    id: 3,
-    name: "Rene",
-    lastName: "Rivas",
-    profession: "Médico clínico",
-    image: isabelOvejero,
-    text: "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
-  }
-]
+
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -74,7 +49,15 @@ function Home() {
         <div className='relative group h-full pl-24 pr-8 w-1/2 flex flex-col justify-between items-start'>
           <div onClick={handleClickLeftArrow} className='hidden absolute left-10 top-1/2 text-2xl text-gray-700 hover:text-black hover:cursor-pointer hover:scale-110 group-hover:block'><MdKeyboardArrowLeft /></div>
           <div onClick={handleClickRightArrow} className='hidden absolute right-10 top-1/2 text-2xl text-gray-700 hover:text-black hover:cursor-pointer hover:scale-110 group-hover:block'><MdKeyboardArrowRight /></div>
-          <Review name={reviewsData[index].name} lastName={reviewsData[index].lastName} profession={reviewsData[index].profession} image={reviewsData[index].image} text={reviewsData[index].text} />
+          <div className='flex flex-col gap-y-6'>
+            <Review name={reviewsData[index].name} lastName={reviewsData[index].lastName} profession={reviewsData[index].profession} image={reviewsData[index].image} text={reviewsData[index].text} />
+            <Link to={'/contact'} className='flex items-center gap-x-1.5 border rounded-lg px-3 py-1.5 bg-naranja w-fit'>
+              <span className='text-md font-bold uppercase text-white'>Contactanos</span>
+              <div className='rounded-full text-white flex items-center justify-center text-[28px] font-bold'>
+                <GoArrowRight />
+              </div>
+            </Link>
+          </div>
         </div>
         <div className='h-full pr-16 pl-8 w-1/2 flex flex-col justify-between items-start'>
           <div className='w-full flex items-end justify-between'>
@@ -82,30 +65,19 @@ function Home() {
             <Link to={'/'} className='text-naranja font-bold hover:underline'>Ver más...</Link>
           </div>
           <div className='w-full flex items-center justify-between gap-x-8'>
-            <div className='flex flex-col items-center gap-y-4'>
-              <div className='text-4xl border rounded-lg p-4'>
-                <img src={psicologia} alt="" />
-              </div>
-              <p className='font-bold text-black text-sm'>Psicología</p>
-            </div>
-            <div className='flex flex-col items-center gap-y-4'>
-              <div className='text-4xl border rounded-lg p-4'>
-                <img src={masaje} alt="" />
-              </div>
-              <p className='font-bold text-black text-sm'>Fisioterapia</p>
-            </div>
-            <div className='flex flex-col items-center gap-y-4'>
-              <div className='text-4xl border rounded-lg p-4'>
-                <img src={fonoaudilogia} alt="" />
-              </div>
-              <p className='font-bold text-black text-sm'>Fonoaudiología</p>
-            </div>
-            <div className='flex flex-col items-center gap-y-4'>
-              <div className='text-4xl border rounded-lg p-4'>
-                <img src={kinesiologia} alt="" />
-              </div>
-              <p className='font-bold text-black text-sm'>Kinesiología</p>
-            </div>
+            {
+              services.map((service, index) => {
+                if(index < 4)
+                return (
+                  <div className='flex flex-col items-center gap-y-4'>
+                    <div className='text-4xl border rounded-lg p-4'>
+                      <img src={service.icon} alt="" />
+                    </div>
+                    <p className='font-bold text-black text-sm'>{service.title}</p>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import { GoArrowRight } from "react-icons/go";
-import { Link } from 'react-router-dom';
+
 
 const Review = ({name, lastName, profession, image, text}) => {
   return (
@@ -15,12 +14,7 @@ const Review = ({name, lastName, profession, image, text}) => {
       <blockquote>
         <p className="w-11/12 text-sm font-semibold text-gray-900 text-start">"{text}"</p>
       </blockquote>
-      <Link to={'/members'} className='flex items-center gap-x-2 border rounded-xl px-4 py-2 bg-naranja'>
-        <span className='text-md font-bold uppercase text-white'>Contactanos</span>
-        <div className='rounded-full text-white flex items-center justify-center text-3xl font-bold'>
-          <GoArrowRight />
-        </div>
-      </Link>
+      
     </figure>
 
   )

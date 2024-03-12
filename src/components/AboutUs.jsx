@@ -1,83 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { FaUserDoctor } from "react-icons/fa6";
+import { aboutUs } from '../constantes/aboutUs';
 
-const aboutUs = [
-  {
-    id: 1,
-    title: "NUESTRA MISION",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore iste cupiditate vitae hic, ad voluptatibus eveniet voluptas dignissimos magni blanditiis quis laborum, itaque ducimus nulla quisquam tenetur minus minima.",
-    img: "https://i.postimg.cc/Fz1H5ygH/110-Definir-la-mision-y-vision-de-una-empresa.jpg",
-    itemsList: [
-      {
-        text: "lorem ipsum",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum",
-        icon: <FaUserDoctor />
-      }
-    ],
-    isActive: false
-  },
-  {
-    id: 2,
-    title: "NUESTRA VISION",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore iste cupiditate vitae hic, ad voluptatibus eveniet voluptas dignissimos magni blanditiis quis laborum, itaque ducimus nulla quisquam tenetur minus minima.",
-    img: "https://blog.grupo-pya.com/wp-content/uploads/2017/05/imagen1.jpg",
-    itemsList: [
-      {
-        text: "lorem ipsum vision",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum vision",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum vision",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum vision",
-        icon: <FaUserDoctor />
-      }
-    ],
-    isActive: false
-  },
-  {
-    id: 3,
-    title: "NUESTROS VALORES",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore iste cupiditate vitae hic, ad voluptatibus eveniet voluptas dignissimos magni blanditiis quis laborum, itaque ducimus nulla quisquam tenetur minus minima.",
-    img: "https://fx-wolf.com/wp-content/uploads/2020/11/what-is-forex.jpg",
-    itemsList: [
-      {
-        text: "lorem ipsum valores",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum valores",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum valores",
-        icon: <FaUserDoctor />
-      },
-      {
-        text: "lorem ipsum valores",
-        icon: <FaUserDoctor />
-      }
-    ],
-    isActive: false
-  }
-]
 
 const AboutUs = () => {
 
@@ -108,7 +31,7 @@ const AboutUs = () => {
                 return (
                   <div key={`${item.text} ${index}`} className='flex items-center gap-x-4'>
                     <div className='bg-celeste/20 text-celeste rounded-full p-3 text-3xl'>
-                      {item.icon}
+                      <img src={item.icon} alt="" />
                     </div>
                     <span className='text-lg'>{item.text}</span>
                   </div>
