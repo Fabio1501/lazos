@@ -1,17 +1,111 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import axios from 'axios'
+import Alert from './Alert'
 
 const Footer = () => {
+  const [subscribe, setSubscribe] = useState('')
+  const [isValid, setIsValid] = useState(true)
+  const [hiddenAlertObject, setHiddenAlertObject] = useState({
+    isHidden: true,
+    text: 'Hubo un error, intentalo de nuevo.',
+    isSuccess: false
+  })
+
+  const validateEmail = () => {
+    if (!subscribe.length) {
+      return false
+    }
+
+    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const dominiosPermitidos = [
+      'gmail.com',
+      'hotmail.com',
+      'yahoo.com',
+      'yahoo.es',
+      'outlook.com',
+      'outlook.es',
+    ]
+    const dominiosPermitidosRegex = new RegExp(
+      `^[a-zA-Z0-9._%+-]+@(${dominiosPermitidos.join('|')})$`,
+      'i',
+    )
+
+    if (!regexEmail.test(subscribe)) {
+      return false
+    }
+
+    if (!dominiosPermitidosRegex.test(subscribe)) {
+      return false
+    }
+
+    return true;
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      if (!validateEmail()) {
+        setIsValid(false);
+        return;
+      };
+      setIsValid(true);
+      const response = await axios.post("https://microservicio-nodemailer.onrender.com/subscribe", { to: subscribe })
+      setHiddenAlertObject({
+        isHidden: false,
+        text: response.data,
+        isSuccess: true
+      })
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      setHiddenAlertObject({
+        isHidden: false,
+        text: '¡Hubo un error al suscribirte!',
+        isSuccess: false
+      })
+    } finally {
+      setTimeout(() => {
+        setHiddenAlertObject({
+          ...hiddenAlertObject,
+          isHidden: true
+        })
+      }, 3000);
+    }
+  }
+
+  const handleChange = (e) => {
+    setSubscribe(e.target.value)
+  }
+
+
   return (
     <footer className="bg-white mt-24">
       <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <Link to="https://flowbite.com/" className="flex items-center">
-              <img src={logo} className="h-12 me-3" alt="FlowBite Logo" />
+          <div className="mb-6 md:mb-0 flex flex-col justify-between">
+            <Link to="/" className="flex items-center">
+              <img src={logo} className="h-12 me-3" alt="Lazos Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap">Lazos</span>
             </Link>
+            <form
+              onSubmit={handleSubmit}
+              className="flex items-center w-full max-w-md">
+              <div className="relative w-full mr-3">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg className="w-4 h-4 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                </div>
+                <input
+                  id="member_email"
+                  className="formkit-input border bg-white focus:bg-white border-gray-400 text-gray-800 text-sm rounded-lg block w-full pl-10 px-5 py-1.5"
+                  name="subscribe" placeholder={"Suscribite"} onChange={handleChange} value={subscribe} />
+                <span className={`absolute text-sm text-red-700 font-semibold -bottom-6 ${!isValid ? 'block' : 'hidden'}`}>La dirección es inválida.</span>
+              </div>
+              <button className="formkit-submit">
+                <span className="px-3 py-1.5 font-medium text-center text-white bg-naranja/90 rounded-lg cursor-pointer border hover:bg-naranja">Enviar</span>
+              </button>
+            </form>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
@@ -81,6 +175,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <Alert hiddenAlertObject={hiddenAlertObject} />
     </footer>
 
   )
