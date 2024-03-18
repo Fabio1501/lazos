@@ -7,7 +7,7 @@ import { members } from '../constantes/members';
 const Members = () => {
   return (
     <div className='w-full h-full flex flex-col items-center'>
-      <section className='w-full h-full max-w-7xl mx-auto flex flex-col gap-y-12'>
+      <section className='w-full h-full max-w-5xl mx-auto flex flex-col gap-y-12'>
         <div className='flex flex-col items-start'>
           <h2 className='font-black text-5xl uppercase p-0'>Conocenos</h2>
           <div className="text-center">

@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 const CardMember = ({name, lastName, profession, online, celPhone, image}) => {
   return (
-    <div className="max-w-80 bg-white border border-gray-200 rounded-lg shadow">
-      <img className="w-full h-64 rounded-t-lg" src={image} alt="" />
+    <div className="max-w-72 bg-white border border-gray-200 rounded-lg shadow">
+      <img className="w-full h-56 rounded-t-lg" src={image} alt="" />
       <div className="p-5 flex flex-col items-start gap-y-3">
         <div className='w-full flex items-center justify-between'>
           <div className='w-full flex flex-col items-start'>
             <div className='w-full flex items-center justify-between'>
               <h5 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 
             ">{name} {lastName}</h5>
-              <div className={`text-green-500 text-2xl ${online ? 'block' : 'hidden'}`}>
+              <div className={`text-green-500 text-xl ${online ? 'block' : 'hidden'}`}>
                 <RiRadioButtonLine />
               </div>
             </div>

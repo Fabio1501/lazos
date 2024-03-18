@@ -79,10 +79,9 @@ const Footer = () => {
     setSubscribe(e.target.value)
   }
 
-
   return (
     <footer className="bg-white mt-24">
-      <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
+      <div className="mx-auto w-full max-w-5xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0 flex flex-col justify-between">
             <Link to="/" className="flex items-center">
@@ -112,10 +111,10 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Recursos</h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="https://flowbite.com/" className="hover:underline">Flowbite</Link>
+                  <Link to="/" className="hover:underline">Flowbite</Link>
                 </li>
                 <li>
-                  <Link to="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</Link>
+                  <Link to="/" className="hover:underline">Tailwind CSS</Link>
                 </li>
               </ul>
             </div>
@@ -123,10 +122,10 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Seguinos</h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="https://github.com/themesberg/flowbite" className="hover:underline ">Github</Link>
+                  <Link to="/" className="hover:underline ">Github</Link>
                 </li>
                 <li>
-                  <Link to="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</Link>
+                  <Link to="/" className="hover:underline">Discord</Link>
                 </li>
               </ul>
             </div>

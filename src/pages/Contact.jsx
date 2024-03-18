@@ -4,7 +4,7 @@ import FormContact from '../components/FormContact'
 const Contact = () => {
   return (
     <div className='w-full h-full flex flex-col items-center justify-between'>
-      <section className='w-full h-full max-w-7xl mx-auto flex items-center'>
+      <section className='w-full h-full max-w-5xl mx-auto flex items-center'>
         <div className='w-1/2'>
           <FormContact />
         </div>

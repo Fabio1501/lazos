@@ -15,7 +15,7 @@ const AboutUs = () => {
   }
 
   return (
-    <section className='w-full h-full max-w-7xl mx-auto flex flex-col items-center'>
+    <section className='w-full h-full max-w-5xl mx-auto flex flex-col items-center'>
       <div className='w-full flex justify-between items-center'>
         <div className='w-1/2 flex flex-col items-start gap-y-6 text-start'>
           <div className='relative flex flex-col items-start'>

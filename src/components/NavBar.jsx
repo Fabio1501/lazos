@@ -17,7 +17,7 @@ function NavBar() {
   }
 
   return (
-    <header className="mx-auto max-w-7xl flex flex-row justify-between items-center gap-y-8 w-full lg:py-4 py-8 text-black mb-12">
+    <header className="mx-auto max-w-5xl flex flex-row justify-between items-center gap-y-8 w-full lg:py-4 py-8 text-black mb-12">
       <Link to='/' >
         <div className='flex items-center gap-x-4'>
           <img src={logo} className="w-20" alt="logo" />
