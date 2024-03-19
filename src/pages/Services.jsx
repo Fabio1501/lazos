@@ -12,7 +12,7 @@ const Services = () => {
           {
             services.map(service => {
               return (
-                <CardService link={service.link} icon={service.icon} text={service.text} title={service.title} />
+                <CardService key={service.id} link={`./${service.id}`} icon={service.icon} text={service.text} title={service.title} />
               )
             })
           }

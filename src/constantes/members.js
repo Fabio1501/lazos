@@ -1,7 +1,9 @@
 import isabelOvejero from '../assets/isabel-ovejero.jpg'
+import {generarUUID} from '../services/generateUUID'
 
 export const members = [
   {
+    id: generarUUID(),
     name: "Isabel",
     lastName: "Ovejero",
     profession: "Psicóloga",
@@ -10,6 +12,7 @@ export const members = [
     image: isabelOvejero
   },
   {
+    id: generarUUID(),
     name: "Viyina",
     lastName: "Rodriguez",
     profession: "Tarotista",
@@ -18,6 +21,7 @@ export const members = [
     image: "https://flowbite.com/docs/images/people/profile-picture-3.jpg"
   },
   {
+    id: generarUUID(),
     name: "María",
     lastName: "Mameli",
     profession: "Psicóloga",
@@ -26,6 +30,7 @@ export const members = [
     image: "https://flowbite.com/docs/images/people/profile-picture-4.jpg"
   },
   {
+    id: generarUUID(),
     name: "Fabio",
     lastName: "Carabajal",
     profession: "Psicóloga",

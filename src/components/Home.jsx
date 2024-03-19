@@ -42,7 +42,7 @@ function Home() {
             </p>
           </div>
         </div>
-        <img src="https://i.postimg.cc/TPdwdvzL/hero-image-lazos.png" className={` rounded-xl w-full`} alt="" />
+        <img src="https://i.postimg.cc/TPdwdvzL/hero-image-lazos.png" className={`rounded-xl w-full`} alt="" />
       </div>
       <div className='absolute -bottom-24 bg-white w-3/4 h-64 shadow-xl rounded-xl flex justify-between items-start py-6 lg:-bottom-32 xl:w-[60%] xl:bottom-6'>
         <div className='relative group h-full pl-16 pr-8 w-1/2 flex flex-col justify-between items-start'>
@@ -68,7 +68,7 @@ function Home() {
               services.map((service, index) => {
                 if(index < 4)
                 return (
-                  <div className='flex flex-col items-center gap-y-4'>
+                  <div key={`${service.id}ser`} className='flex flex-col items-center gap-y-4'>
                     <div className='text-4xl border rounded-lg p-4'>
                       <img src={service.icon} alt="" />
                     </div>

@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Members from './pages/Members'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
+import DetailService from './pages/DetailService'
 
 function App() {
 
@@ -27,6 +28,11 @@ function App() {
           exact
           path='/services'
           element={<Services />}
+        />
+        <Route
+          exact
+          path='/services/:id'
+          element={<DetailService />}
         />
         <Route
           exact
