@@ -45,9 +45,9 @@ function Home() {
         <img src="https://i.postimg.cc/TPdwdvzL/hero-image-lazos.png" className={` rounded-xl w-full`} alt="" />
       </div>
       <div className='absolute -bottom-24 bg-white w-3/4 h-64 shadow-xl rounded-xl flex justify-between items-start py-6 lg:-bottom-32 xl:w-[60%] xl:bottom-6'>
-        <div className='relative group h-full pl-24 pr-8 w-1/2 flex flex-col justify-between items-start'>
-          <div onClick={handleClickLeftArrow} className='hidden absolute left-10 top-1/2 text-2xl text-gray-700 hover:text-black hover:cursor-pointer hover:scale-110 group-hover:block'><MdKeyboardArrowLeft /></div>
-          <div onClick={handleClickRightArrow} className='hidden absolute right-10 top-1/2 text-2xl text-gray-700 hover:text-black hover:cursor-pointer hover:scale-110 group-hover:block'><MdKeyboardArrowRight /></div>
+        <div className='relative group h-full pl-16 pr-8 w-1/2 flex flex-col justify-between items-start'>
+          <div onClick={handleClickLeftArrow} className='hidden absolute left-6 top-1/2 text-2xl text-gray-700 hover:text-black hover:cursor-pointer hover:scale-110 group-hover:block'><MdKeyboardArrowLeft /></div>
+          <div onClick={handleClickRightArrow} className='hidden absolute right-6 top-1/2 text-2xl text-gray-700 hover:text-black hover:cursor-pointer hover:scale-110 group-hover:block'><MdKeyboardArrowRight /></div>
           <div className='flex flex-col gap-y-6'>
             <Review name={reviewsData[index].name} lastName={reviewsData[index].lastName} profession={reviewsData[index].profession} image={reviewsData[index].image} text={reviewsData[index].text} />
             <Link to={'/contact'} className='flex items-center gap-x-1.5 border rounded-lg px-3 py-1.5 bg-naranja w-fit'>

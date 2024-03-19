@@ -15,12 +15,12 @@ const AboutUs = () => {
   }
 
   return (
-    <section className='w-full h-full max-w-5xl mx-auto flex flex-col items-center'>
+    <section className='mt-12 w-full h-full max-w-5xl mx-auto flex flex-col items-center'>
       <div className='w-full flex justify-between items-center'>
         <div className='w-1/2 flex flex-col items-start gap-y-6 text-start'>
           <div className='relative flex flex-col items-start'>
             <h2 className='font-black text-3xl'>{itemSelected?.title}</h2>
-            <div className="text-center mb-10">
+            <div className="text-center ">
               <span className="inline-block w-40 h-1.5 rounded-full bg-naranja"></span>
             </div>
           </div>

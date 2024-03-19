@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
 import axios from 'axios'
 import Alert from './Alert'
+
+import { validateEmail } from '../services/emailValidation'
+import logo from '../assets/logo.png'
 
 const Footer = () => {
   const [subscribe, setSubscribe] = useState('')
@@ -13,40 +15,10 @@ const Footer = () => {
     isSuccess: false
   })
 
-  const validateEmail = () => {
-    if (!subscribe.length) {
-      return false
-    }
-
-    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    const dominiosPermitidos = [
-      'gmail.com',
-      'hotmail.com',
-      'yahoo.com',
-      'yahoo.es',
-      'outlook.com',
-      'outlook.es',
-    ]
-    const dominiosPermitidosRegex = new RegExp(
-      `^[a-zA-Z0-9._%+-]+@(${dominiosPermitidos.join('|')})$`,
-      'i',
-    )
-
-    if (!regexEmail.test(subscribe)) {
-      return false
-    }
-
-    if (!dominiosPermitidosRegex.test(subscribe)) {
-      return false
-    }
-
-    return true;
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      if (!validateEmail()) {
+      if (!validateEmail(subscribe)) {
         setIsValid(false);
         return;
       };

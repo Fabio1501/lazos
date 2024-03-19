@@ -12,7 +12,7 @@ export const members = [
   {
     name: "Viyina",
     lastName: "Rodriguez",
-    profession: "Psicóloga",
+    profession: "Tarotista",
     online: false,
     celPhone: "+543865559022",
     image: "https://flowbite.com/docs/images/people/profile-picture-3.jpg"

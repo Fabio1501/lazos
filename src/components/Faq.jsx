@@ -8,10 +8,10 @@ const Faq = () => {
   const [dataFaq, setDataFaq] = useState(faq)
 
   return (
-    <div className='max-w-5xl flex flex-col gap-y-8 w-full'>
+    <div className='max-w-5xl flex flex-col gap-y-8 w-full -mt-10'>
       <div className='relative flex flex-col items-start'>
         <h2 className='font-black text-3xl'>PREGUNTAS FRECUENTES</h2>
-        <div className="text-center mb-10">
+        <div className="text-center ">
           <span className="inline-block w-40 h-1.5 rounded-full bg-naranja"></span>
         </div>
       </div>
